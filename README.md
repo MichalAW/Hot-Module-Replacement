@@ -1,6 +1,6 @@
-# 20.6.Develop-Todo-app
-When creating the TodoList component, use the presentation component (construction arrow function). The component has the task of picking up a list of things to do at the entrance and displaying each element accordingly.
 
-repo --> https://github.com/MichalAW/20.6.Develop-Todo-app.git
+the task will be to complete the Todo application, this time without reloading the package after making any changes. Everything will happen automatically without our participation.
 
-site --> https://michalaw.github.io/20.6.Develop-Todo-app/
+repo --> https://github.com/MichalAW/20.7.Hot-Module-Replacement.git
+
+site --> https://michalaw.github.io/20.7.Hot-Module-Replacement/
