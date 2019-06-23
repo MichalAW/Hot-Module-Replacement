@@ -4,13 +4,11 @@
     "description": " Todo,  without any reloading of the package after making any changes.",
     "main": "script.js",
     "scripts": {
-        "test:echo": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --hot --env development",
-        "start:mode": "webpack-dev-server --mode=development",
-        "build": "webpack --mode=production",
-        "development": "webpack --mode=development",
-        "start-dev": "webpack-dev-server",
-        "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"
+    "start": "webpack-dev-server --hot --env.development",
+    "start:mode": "webpack-dev-server --env.development",
+    "build": "webpack --env.production",
+    "development": "webpack --env.development",
+    "start-dev": "webpack-dev-server --env.development"
     },
     "repository": {
         "type": "git",
