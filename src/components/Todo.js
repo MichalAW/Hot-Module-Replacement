@@ -1,14 +1,13 @@
 import React from 'react';
+import style from './TodoList.css';
 
-class Todo extends React.Component {
-    render() {
-        return(
-            <div onClick = { ()=> this.props.removeTodo(this.props.id)}>
-                <div>{this.props.id}</div>
-                <div>{this.props.text}</div>
-            </div>
-        )
-    }
-}
+const Todo = props => props.list.map(task => (
+    <li className={style.task} key={task.id}>{task.text}
+        <button className={style.delete} key={task.id} onClick={() => props.remove(task.id)}>
+            X
+			</button>
+    </li>
+)
+);
 
 export default Todo;

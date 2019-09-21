@@ -1,40 +1,33 @@
 import React from 'react';
-import uuid from 'uuid';
-import { hot } from 'react-hot-loader';
 import style from './App.css';
+import uuid from 'uuid';
 import Title from '../components/Title';
-import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
+import Todo from '../components/Todo';
+import {hot} from 'react-hot-loader';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [
-                {
-                    id: uuid.v4(),
-                    text: "123"
-                },
-                {
-                    id: uuid.v4(),
-                    text: "123"
-                },
-                {
-                    id: uuid.v4(),
-                    text: "123"
-                }
-            ]
+            data: [{
+                id: 1,
+                text: 'important'
+            }, {
+                id: 2,
+                text: 'priority'
+            }, {
+                id: 3,
+                text: 'finished'
+            }],
+            title: 'Tasks :'
         };
-        this.removeTodo = this.removeTodo.bind(this);
-        this.addTodo = this.addTodo.bind(this);
     }
-
     addTodo(val) {
         const todo = {
             text: val,
             id: uuid.v4(),
         };
-
         const data = [...this.state.data, todo];
         this.setState({
             data
@@ -49,16 +42,28 @@ class App extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                <Title name="My Title" todoListCount={this.state.data.length}/>
-                <div className={style.TodoApp}>
-                    <TodoList data={this.state.data} removeTodo={this.removeTodo}/> 
-                </div>
-                <div>
-                    <TodoForm addTodo={this.addTodo}/> 
-                </div>
-            </div>
+        return ( <div className = {
+                style.TodoApp
+            } >
+            <
+            Title title = {
+                this.state.title
+            }
+            numberOfTasks = {
+                this.state.data.length
+            }
+            /> <
+            Todo list = {
+                this.state.data
+            }
+            remove = {
+                this.removeTodo.bind(this)
+            }
+            /> <
+            TodoForm add = {
+                this.addTodo.bind(this)
+            }
+            /> </div>
         );
     }
 }
